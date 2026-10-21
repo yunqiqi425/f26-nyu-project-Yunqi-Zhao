@@ -8,3 +8,190 @@
 }
 
 /* START BELOW */
+/* Color palette from the Style Tile */
+:root {
+  --color-primary: #FFF0D6;
+  --color-secondary: #918F37;
+  --color-accent: #C74D01;
+  --color-gold: #E3A325;
+  --color-text: #20161E;
+
+  --space-unit: 8px;
+}
+
+/* Basic reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* === HEADBAR === */
+
+header {
+  border-bottom: 1px solid var(--color-secondary);
+  padding: calc(var(--space-unit) * 2);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 24px 48px;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: inline-block;
+  margin-right: calc(var(--space-unit) * 3);
+  color: var(--color-primary);
+  font-family: "Arsenal SC", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.header-tools a,
+.header-tools button {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: var(--space-unit);
+  color: var(--color-primary);
+  font-family: inherit;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+header nav button {
+  border: none;
+  background: none;
+  padding: 0;
+  box-shadow: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+header,
+header nav {
+  border: none;
+  border-bottom: none;
+  box-shadow: none;
+  transform: translateY(-10px);
+}
+
+/* Hero section/Three Columns */
+#home {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 600px;
+  padding: 0;
+}
+
+/* Each column */
+.hero-column {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 600px;
+  margin: 0;
+  padding: 32px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Headline font */
+.hero-column h1,
+.hero-column h2 {
+  margin: 0 0 24px;
+  font-family: "Zen Old Mincho", "Noto Serif CJK SC", serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+/* Vertical Chinese headline */
+.vertical-headline {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  color: var(--color-primary);
+  gap: -100px;
+
+  writing-mode: horizontal-tb;
+  margin: 0 0 24px;
+}
+
+.vertical-headline span {
+  display: block;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  white-space: nowrap;
+  letter-spacing: 10px;
+}
+
+.vertical-headline span:nth-child(2) {
+  margin-top: 100px;
+  letter-spacing: 10px;
+}
+
+/* Column 1: Move both lines to the right */
+.hero-culture .vertical-headline {
+  transform: translateX(80px);
+}
+
+/* Column 2: Move the headline left and up */
+.hero-brew .vertical-headline {
+  transform: translate(-80px, -200px);
+}
+
+/* Column 3: Move the headline to the left */
+.hero-teaset .vertical-headline {
+  transform: translateX(-70px);
+}
+
+/* CTA */
+.hero-column .cta-link {
+  display: inline-block;
+  position: relative;
+  top: 80px;
+
+  margin: 0;
+  padding: calc(var(--space-unit) * 2) 0;
+
+  background: none;
+  color: var(--color-primary);
+  border: none;
+
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+

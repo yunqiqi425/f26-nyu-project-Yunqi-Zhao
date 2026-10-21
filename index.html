@@ -4,10 +4,108 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Project</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- START BELOW -->
-     
+    <!-- User Flow: Testimonial quote (reads headline) → CTA button (taps "Discover the Culture") → Feature section  -->
+    <!-- HEAD BAR -->
+    <header>
+      <nav aria-label="Main navigation">
+      <!-- LOGO BUTTON-->
+      <a class="logo" href="#home">ONELEAF</a>
+
+      <!-- TOOLS -->
+      <div class="header-tools">
+          <a href="#language">Language</a>
+          <a href="#account">Account</a>
+
+      <!-- SEARCH BUTTON-->
+        <button type="button" aria-label="Search">
+        Search
+        </button>
+
+      <!-- SHOPPING CART -->
+      <a href="cart.html" aria-label="Shopping cart">
+          Cart
+      </a>
+      <!-- HAMBURGER MENU BUTTON -->
+      <button
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          ☰
+      </button>
+
+      </div>
+      </nav>
+    </header>
+
+    <main>
+    <!-- HERO SECTION: Three Columns -->
+    <section id="home">
+
+    <!-- Column 1: Discover the Culture -->
+    <div class="hero-column hero-culture">
+      <!-- Background Video -->
+      <video autoplay muted loop>
+        <source src="video-culture.mp4" type="video/mp4">
+      </video>
+
+      <!-- Chinese Headline -->
+      <h1 class="vertical-headline">
+         <span>一叶入水，</span>
+         <span>千年成韵。</span>
+      </h1>
+
+      <!-- CTA Button -->
+      <a class="cta-link" href="#culture">
+            Discover the Culture
+      </a>
+    </div>
+       
+    <!-- Column 2: Brew Your First Cup -->
+    <div class="hero-column hero-brew">
+      <!-- Background Video -->
+      <video autoplay muted loop>
+      <source src="video-brew.mp4" type="video/mp4">
+      </video>
+
+      <!-- Chinese Headline -->
+      <h2 class="vertical-headline">
+        <span>一水一泡，</span>
+        <span>慢品茶香。</span>
+      </h2>
+
+      <!-- CTA Button -->
+      <a class="cta-link" href="#brew">
+          Brew Your First Cup
+      </a>
+    </div>
+
+    <!-- Column 3: Build Your Tea Set -->
+    <div class="hero-column hero-teaset">
+      <!-- Background Video -->
+      <video autoplay muted loop>
+        <source src="videos-teaset.mp4" type="video/mp4">
+      </video>
+
+      <!-- Chinese Headline -->
+      <h2 class="vertical-headline">
+        <span>一器一用，</span>
+        <span>皆有茶意。</span>
+      </h2>
+
+      <!-- CTA Button -->
+      <a class="cta-link" href="#teaset">
+            Build Your Tea Set
+      </a>
+    </div>
+    </section>
+    </main>
   </body>
 </html>

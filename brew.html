@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Brew Your First Tea</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- START BELOW -->
+    <!-- User Flow: Testimonial quote (reads headline) → CTA button (taps "Discover the Culture") → Feature section  -->
+    <!-- HEAD BAR -->
+    <header>
+      <nav aria-label="Main navigation">
+      <!-- LOGO BUTTON-->
+      <a class="logo" href="#home">ONELEAF</a>
+
+      <!-- TOOLS -->
+      <div class="header-tools">
+          <a href="#language">Language</a>
+          <a href="#account">Account</a>
+
+      <!-- SEARCH BUTTON-->
+      <button type="button" aria-label="Search">
+        Search
+      </button>
+
+      <!-- HAMBURGER MENU BUTTON -->
+      <button
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          ☰
+      </button>
+
+      <!-- SHOPPING CART -->
+      <a href="cart.html" aria-label="Shopping cart">
+          Cart
+      </a>
+      </div>
+      </nav>
+    </header>
+
+    <!-- BREW YOUR FIRST CUP HERO -->
+    <main>
+      <section class="brew-hero">
+        <div class="brew-intro">
+        <h1>Brew Your First Cup</h1>
+
+        <p>
+          Discover the art of Chinese tea, one step at a time.
+          From preparing your teaware to savoring the final sip, 
+          learn the simple rituals behind every cup. Slow down, 
+          follow the rhythm, and enjoy your first brew.
+        </p>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <a class="scroll-link" href="#brewing-steps">
+          <span class="scroll-arrow" aria-hidden="true"></span>
+          <span class="scroll-text">Scroll Down to Start</span>
+        </a>
+      </section>
+
+    <!-- BREWING STEPS -->
+      <section id="brewing-steps" class="brew-steps">
+      <div id="content-container">
+    <!-- JavaScript will generate the six steps here -->
+      </div>
+      </section>
+      
+    <!-- SECOND PAGE: BREWING STEPS 01–03 -->
+      <section class="brew-steps-page" id="brew-steps-1">
+
+      <div id="step-container-1" class="brew-step-container">
+      <!-- JavaScript will generate the first three steps here -->
+      </div>
+
+    <!-- Scroll to the next group of steps -->
+      <a class="next-section-link"
+       href="#brew-steps-2"
+       aria-label="Scroll to the next three brewing steps">
+      <span class="next-section-arrow" aria-hidden="true"></span>
+      </a>
+      </section>
+      
+    <!-- SECOND PAGE: BREWING STEPS 04–06 -->
+      <section class="brew-steps-page" id="brew-steps-2">
+      <div id="step-container-2" class="brew-step-container">
+
+    <!-- JavaScript will generate the last three steps here -->
+      </div>
+      
+    <!-- Scroll to the next section -->
+      <a class="next-section-link"
+      href="#next-section"
+      aria-label="Scroll to the next section">
+      <span class="next-section-arrow" aria-hidden="true"></span>
+      </a>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

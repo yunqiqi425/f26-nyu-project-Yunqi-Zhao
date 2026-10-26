@@ -58,7 +58,7 @@ nav {
   margin-right: calc(var(--space-unit) * 3);
   color: var(--color-primary);
   font-family: "Arsenal SC", sans-serif;
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 2px;
@@ -102,12 +102,22 @@ header nav {
   transform: translateY(-10px);
 }
 
+/* Fixed Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
 /* Hero section/Three Columns */
 #home {
   display: flex;
   flex-direction: row;
   width: 100%;
-  min-height: 600px;
+  min-height: 100vh;
   padding: 0;
 }
 
@@ -142,7 +152,6 @@ header nav {
   flex-direction: row;
   align-items: flex-start;
   color: var(--color-primary);
-  gap: -100px;
 
   writing-mode: horizontal-tb;
   margin: 0 0 24px;
@@ -168,7 +177,7 @@ header nav {
 
 /* Column 2: Move the headline left and up */
 .hero-brew .vertical-headline {
-  transform: translate(-80px, -200px);
+  transform: translate(-80px, -160px);
 }
 
 /* Column 3: Move the headline to the left */
@@ -180,7 +189,7 @@ header nav {
 .hero-column .cta-link {
   display: inline-block;
   position: relative;
-  top: 80px;
+  top: 100px;
 
   margin: 0;
   padding: calc(var(--space-unit) * 2) 0;
@@ -194,4 +203,246 @@ header nav {
   text-decoration: underline;
   text-underline-offset: 6px;
 }
+  
+
+/* BREW YOUR FIRST CUP HERO */
+  .brew-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--color-primary);
+}
+
+/* Hero title and description */
+  .brew-intro {
+  position: absolute;
+  width: 25%;
+  right: 8%;
+  top: 70%;
+  transform: translateY(-70%);
+  z-index: 2;
+}
+
+  .brew-intro h1 {
+  margin: 0 0 16px;
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+  .brew-intro p {
+  margin: 0;
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2.2;
+}
+
+/* Horizontal arrow across the hero */
+  .intro-arrow {
+  position: absolute;
+  top: 68%;
+  left: 0;
+  width: 63%;
+  height: 5px;
+  background-color: var(--color-primary);
+}
+
+  .intro-arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -4px;
+  width: 7px;
+  height: px;
+  border-top: 1px solid var(--color-primary);
+  border-right: 1px solid var(--color-primary);
+  transform: rotate(45deg);
+}
+
+/* Scroll Down CTA */
+  .scroll-link {
+  position: absolute;
+  right: 18%;
+  bottom: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 12px;
+}
+
+/* Vertical arrow */
+  .scroll-arrow {
+  position: relative;
+  display: block;
+  width: 1px;
+  height: 64px;
+  background-color: var(--color-primary);
+}
+
+  .scroll-arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-primary);
+  transform: rotate(45deg);
+}
+
+/* Scroll destination */
+  #brewing-steps {
+  scroll-margin-top: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* BREWING STEP 01-03 */
+.brew-steps-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  color: var(--color-primary);
+}
+
+/* Three-column layout */
+.brew-step-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  min-height: 100vh;
+}
+
+/* Individual step */
+.brew-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 32px 16%;
+  min-width: 0;
+}
+
+/* Vertical Chinese title */
+.brew-step .vertical-chinese {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+
+  margin: 0 0 24px;
+  font-family: "Zen Old Mincho", "Noto Serif CJK SC", serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.8;
+  letter-spacing: 2px;
+  white-space: pre-line;
+}
+
+/* Chinese number and title */
+.brew-step .vertical-chinese {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0 0 24px;
+  font-family: "Zen Old Mincho", "Noto Serif CJK SC", serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.8;
+  letter-spacing: 2px;
+  transform: translateX(-12px);
+}
+
+/* Vertical number */
+.brew-step .chinese-number {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  line-height: 1.8;
+}
+
+/* Vertical Chinese title */
+.brew-step .chinese-title {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  line-height: 1.8;
+  letter-spacing: 8px;
+}
+
+/* English step title */
+.brew-step h3 {
+  margin: 0 0 5px;
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Step description */
+.brew-step p {
+  max-width: 280px;
+  margin: 0;
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* First group: Steps 01–03 */
+.brew-step:nth-child(1) p {
+  max-width: 255px;
+}
+
+.brew-step:nth-child(3) p {
+  max-width: 250px;
+}
+
+/* Second group: Steps 04–06 */
+#step-container-2 .brew-step:nth-child(1) p {
+  max-width: 310px;
+}
+
+#step-container-2 .brew-step:nth-child(2) p {
+  max-width: 300px;
+}
+
+#step-container-2 .brew-step:nth-child(3) p {
+  max-width: 270px;
+}
+
+
+/* Arrow on the far right */
+.next-section-link {
+  position: absolute;
+  right: 3.5%;
+  bottom: 7%;
+  display: block;
+  width: 1px;
+  height: 72px;
+  background-color: var(--color-primary);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.next-section-arrow {
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+
 

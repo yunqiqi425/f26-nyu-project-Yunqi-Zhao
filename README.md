@@ -115,3 +115,18 @@ This data-driven approach separates the content from the HTML structure, reduces
 - JavaScript
 - Google Fonts
 - GitHub Codespaces
+
+## Structure Audit — [Oct 26]
+
+**Fixed today:**
+
+- Deleted empty CTA links to #language, #account, #shoppingcart, #culture, and #teaset, and changed CTA buttons #culture and #teaset to normal labels in index.html
+- Deleted background video links for three columns index.html
+- Revised the style code in CSS for head bar due to the html change
+- Deleted the empty #content-container section
+
+- **Still missing (building before the layout assignment):**
+- complete challenges I ran into and my plans for next week in README.
+- Build the page for the final step of the #Brew section
+
+**One thing I couldn't figure out:**

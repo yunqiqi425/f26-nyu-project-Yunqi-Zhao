@@ -11,39 +11,41 @@
   </head>
   <body>
     <!-- START BELOW -->
-    <!-- User Flow: Testimonial quote (reads headline) → CTA button (taps "Discover the Culture") → Feature section  -->
+    <!-- User Flow: Testimonial quote (reads headline) → CTA button (taps "Discover the Culture") → Feature section → Brew Steps --> 
     <!-- HEAD BAR -->
-    <header>
-      <nav aria-label="Main navigation">
-      <!-- LOGO BUTTON-->
-      <a class="logo" href="#home">ONELEAF</a>
+    
+  <header>
+    <nav aria-label="Main navigation">
 
-      <!-- TOOLS -->
+    <!-- LOGO -->
+    <a class="logo" href="#home">ONELEAF</a>
+
+    <!-- TOOLS -->
       <div class="header-tools">
-          <a href="#language">Language</a>
-          <a href="#account">Account</a>
+        <span>Language</span>
+        <span>Account</span>
 
-      <!-- SEARCH BUTTON-->
-        <button type="button" aria-label="Search">
+      <!-- SEARCH BUTTON -->
+      <button type="button" aria-label="Search">
         Search
-        </button>
-
-      <!-- SHOPPING CART -->
-      <a href="cart.html" aria-label="Shopping cart">
-          Cart
-      </a>
-      <!-- HAMBURGER MENU BUTTON -->
-      <button
-          type="button"
-          aria-label="Open menu"
-          aria-expanded="false"
-        >
-          ☰
       </button>
 
+      <!-- HAMBURGER MENU BUTTON -->
+      <button
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <!-- SHOPPING CART -->
+      <span aria-label="Shopping cart">Cart</span>
       </div>
-      </nav>
-    </header>
+
+    </nav>
+  </header>
+
 
     <main>
     <!-- HERO SECTION: Three Columns -->
@@ -63,9 +65,9 @@
       </h1>
 
       <!-- CTA Button -->
-      <a class="cta-link" href="#culture">
-            Discover the Culture
-      </a>
+      <span class="cta-link">
+         Discover the Culture
+      </span>
     </div>
        
     <!-- Column 2: Brew Your First Cup -->
@@ -101,9 +103,9 @@
       </h2>
 
       <!-- CTA Button -->
-      <a class="cta-link" href="#teaset">
-            Build Your Tea Set
-      </a>
+      <span class="cta-link">
+         Build Your Tea Set
+      </span>
     </div>
     </section>
     </main>

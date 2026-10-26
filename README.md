@@ -126,7 +126,8 @@ This data-driven approach separates the content from the HTML structure, reduces
 - Deleted the empty #content-container section
 
 - **Still missing (building before the layout assignment):**
-- complete challenges I ran into and my plans for next week in README.
+- Complete challenges I ran into and my plans for next week in README.
 - Build the page for the final step of the #Brew section
 
 **One thing I couldn't figure out:**
+-The style of landing page always changes due to the changes in html or javascript

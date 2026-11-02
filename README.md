@@ -92,6 +92,16 @@ This week, I developed the section page of tea brewing using HTML and CSS. The b
 
 I also used JavaScript to generate the brewing-step content dynamically from an array of data objects. This approach keeps the content organized and allows the same rendering function to display different groups of steps with a consistent layout.
 
+## Challenges
+
+One of the biggest challenge I faced is when I changed the codes in HTML or CSS, the layout of my landing page moved upward relatively or the headbar changed styles. This is becaused there were a few groups of the codes that control the headbar and when I added some certain things, the later one rewrote the former one. So I checked those, delete and combined unnecessary codes.
+
+Another challenge was the hero headline format. Since my hero headlines contain Chinese characters which align in two columns, it is hard to seperate them into two using span and control seperately in Javascript and CSS to keep them in one row.
+
+## Plans For Next Week
+
+- Complete the page for the last step of the brewing process
+
 ## Data and JavaScript
 
 The brewing guide uses a JavaScript array called `teaSteps`. Each object represents one brewing step and contains the following properties:
@@ -124,10 +134,36 @@ This data-driven approach separates the content from the HTML structure, reduces
 - Deleted background video links for three columns index.html
 - Revised the style code in CSS for head bar due to the html change
 - Deleted the empty #content-container section
+- Added Challenges and Plans to last week's audit
 
 - **Still missing (building before the layout assignment):**
 - Complete challenges I ran into and my plans for next week in README.
 - Build the page for the final step of the #Brew section
 
 **One thing I couldn't figure out:**
--The style of landing page always changes due to the changes in html or javascript
+-The style of landing page always changes relatively due to the changes in html or javascript
+
+## Weekly Update - [Nov 1]
+
+## Changes
+
+**Landing Page**
+
+- Converted the landing page hero layout from Flexbox to CSS Grid.
+- Added a responsive breakpoint for the mobile layout.
+
+**Brew Page**
+
+- Continued refining the final brewing step section.
+- Adjusted the placement of the next-section arrow and description.
+
+## Challenges
+
+The biggest chanllenges I faced this week is when doing the responsive breakpoint, some of the elements such as head bar and CTA button(sroll down) are more compelicated than adjustment of the width. According to my mockups, the menu navigations are combined into hamburger menu on mobile, and the arrow and descriptions should align in center. Also, since my final step page is on a separate page, I still need to fix it and keep it in center like the other six steps on mobile.
+
+## Plans for Next Week
+
+- Refine the spacing between the Chinese number and title in the final step headline.
+- Move the headline and description for final step down, and put arrow and description into next page so that it shows the final step first, and when scrolling the arrow and desciptions shows.
+- Improve the responsive header and mobile navigation, some features such as #language #Account should be folded into the hamburger menu when on mobile
+- Refine the scroll-down CTA and final page layout.

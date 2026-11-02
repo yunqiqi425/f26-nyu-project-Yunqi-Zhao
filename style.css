@@ -115,10 +115,10 @@ header {
   box-sizing: border-box;
 }
 
-/* Hero section/Three Columns */
+/* Hero section/Three Columns/ Grid System */
 #home {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
   min-height: 100vh;
   padding: 0;
@@ -449,4 +449,121 @@ html {
   transform: rotate(45deg);
 }
 
+/* FINAL SECTION: Savor the Tea */
 
+.brew-ending {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  color: var(--color-primary);
+}
+
+/* Keep the section background and viewport in place */
+.brew-ending-stage {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Closing content */
+.brew-ending-content {
+  position: absolute;
+  left: 11.5%;
+  bottom: 10%;
+  width: 360px;
+  max-width: 40%;
+}
+
+/* Vertical Chinese headline */
+.ending-chinese {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  white-space: nowrap;
+
+  margin: 0 0 28px;
+
+  font-family: "Zen Old Mincho", "Noto Serif CJK SC", serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 8px;
+  color: inherit;
+  transform: translateX(-12px)
+}
+
+/* English title */
+.brew-ending-content h3 {
+  margin: 0 0 8px;
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Description */
+.brew-ending-content p {
+  max-width: 340px;
+  margin: 0;
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Next Section Indicator */
+.ending-next {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 32px;
+  color: inherit;
+  text-align: left;
+}
+
+/* Vertical Down Arrow */
+.ending-next-arrow {
+  position: relative;
+  width: 1px;
+  height: 48px;
+  display: block;
+  height: 64px;
+  background-color: var(--color-primary);
+  transform: translateX(150px)
+}
+
+.ending-next-arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+
+  width: 7px;
+  height: 7px;
+
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+
+  transform: rotate(45deg);
+}
+
+/* Next Section Text */
+.ending-next p {
+  margin: 0;
+  text-align: center;
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.8;
+  transform: translateX(105px)
+}
+
+/* Responsive Layout: Mobile */
+@media screen and (max-width: 768px) {
+
+  .brew-step-container {
+    grid-template-columns: 1fr;
+  }
+
+}

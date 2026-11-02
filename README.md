@@ -167,3 +167,7 @@ The biggest chanllenges I faced this week is when doing the responsive breakpoin
 - Move the headline and description for final step down, and put arrow and description into next page so that it shows the final step first, and when scrolling the arrow and desciptions shows.
 - Improve the responsive header and mobile navigation, some features such as #language #Account should be folded into the hamburger menu when on mobile
 - Refine the scroll-down CTA and final page layout.
+
+## side-by-side screenshot link
+
+https://www.figma.com/design/HDBo3dj1CC6MB2I2jE6dej/Yunqi-Zhao_LandingPage?node-id=357-2407&t=kWREdYd9bRrDtKXx-1

@@ -171,3 +171,80 @@ The biggest chanllenges I faced this week is when doing the responsive breakpoin
 ## side-by-side screenshot link
 
 https://www.figma.com/design/HDBo3dj1CC6MB2I2jE6dej/Yunqi-Zhao_LandingPage?node-id=357-2407&t=kWREdYd9bRrDtKXx-1
+
+# ONELEAF
+
+**Latest mockups:** https://www.figma.com/design/HDBo3dj1CC6MB2I2jE6dej/Yunqi-Zhao_LandingPage?node-id=17-126&t=O2XykBvhoLc2gP3s-1
+**Live site:** https://cautious-happiness-vprqg9jj67v7hpgv5-5504.app.github.dev/
+
+## Project Log
+
+### Week 8 — Nov 7
+
+**State Plan**
+
+- **User story:**
+  As a beginner learning Chinese tea brewing, I want to track my progress through the brewing steps so that I can follow the process and know when I have completed it.
+
+- **What does the page remember?**
+  The number of brewing steps the user has completed.
+
+- **What does it start at?**
+  0 completed steps.
+
+- **What changes it?**
+  The user clicks the “Scroll Down to Start” button or the arrow on the first page to start the section. On the following page, the user clicks "Next" or the arrow to continue to the next group of brewing steps. The progress updates from 0 to 3, 3 to 6, and finally 6 to 7.
+
+- **What does the user see?**
+  A progress count displayed as 0/7, 3/7, 6/7, and 7/7. When all seven steps are completed, the final page displays “Enjoy Your Tea!”
+
+- **What does the `if/else` decide?**
+  Whether the user has completed all seven brewing steps. If all steps are completed, the page displays “Enjoy Your Tea!” Otherwise, it displays the current progress and allows the user to continue.
+
+  **What changed:**
+
+1. I found that the `#brewing-steps` target did not exist in the HTML. Since there was no element with `id="brewing-steps"`, the link could not navigate to the correct section. The actual section ID was `brew-steps-1`, so I changed the link to `href="#brew-steps-1"`.
+2. Since I needed to track progress, I added a `0 / 7` progress indicator below the “Scroll Down to Start” link on the first page.
+3. I added “Next” and “3 / 7” below the arrow on the second page, and “Next” and “6 / 7” below the arrow on the third page.
+4. I added an “Enjoy Your Tea!” message to the final page and made it hidden until all the steps are completed.
+5. I added CSS styling for the new elements on each page.
+6. I implemented the number-tracking functionality in JavaScript.
+
+**What was hard, and what I tried:**
+
+1. I wanted to move the `0 / 7` progress indicator higher on the first page without changing any other elements on that page or on the following pages. Since `.progress-count` is a shared CSS class, I needed to find a way to adjust only the progress indicator on the first page.
+2. When I clicked the arrow or the “Next” link, I could not navigate to the final page, and “Enjoy Your Tea!” did not appear. I had to check the HTML and JavaScript and compare the IDs one by one. There were many elements, and some of the IDs did not match, which made it difficult to find the problem.
+3. After everything was working, I still needed to adjust the layout and styling in `style.css` and continue refining the spacing and positions of the elements.
+
+**What happened when I tried to break it:**
+
+When I tried to add the number-tracking function required for this week, some of the existing elements changed as well. This has been a recurring issue in my recent work: changing one element sometimes affects other parts of the website.
+
+I then had to go back and check whether the problem was in the HTML, CSS, or JavaScript. I also needed to make sure that the IDs were correct and properly connected, and figure out whether the change affected an entire section or only part of it.
+
+**What I learned or changed my mind about:**
+
+I learned that when adding a new feature, such as the number-tracking function for this week, I first need to add any missing elements to the HTML, then style them in CSS, and finally implement the functionality in JavaScript.
+
+Sometimes, elements can overlap or be duplicated, so I need to remove unnecessary code to avoid conflicts. I also learned how important it is to keep IDs consistent between the HTML and JavaScript. For example, if JavaScript refers to an ID, that ID must match the one in the HTML exactly.
+
+As the project becomes more complex, it is easy to lose track of these connections. If the IDs do not match, the feature may not work, and I have to spend a lot of time checking each element or inspecting the console for errors. I realized that it is much more efficient to pay attention to these details from the beginning rather than trying to fix everything afterward.
+
+**Question for Joey:**
+
+Last week, one of the biggest challenges I faced was making my website responsive. I realized that adjusting the width at different breakpoints is not always enough. Some elements require more complicated changes.
+
+For example, according to my mockups, the navigation menu should collapse into a hamburger menu on mobile, while the arrow and descriptions should be centered. Also, since my final brewing step is in a separate section, I still need to adjust its layout so that it stays centered on mobile, just like the other six steps.
+
+I am not sure how to handle these changes, especially when some navigation items, such as Language and Account, need to be moved into the hamburger menu on mobile. How should I approach these kinds of responsive layout changes?
+
+**Next week's goal:**
+
+1. Refine the spacing between the Chinese number and title in the final step headline.
+2. Improve the responsive header and mobile navigation. On mobile, some features, such as Language and Account, should be moved into the hamburger menu.
+
+**AI use:**
+
+1. I explained my ideas to AI and asked for step-by-step guidance on how to implement them, including whether I should make changes in HTML, CSS, or JavaScript.
+2. After making changes, I tested the website. When I found an issue or a link did not navigate correctly, I asked AI to help me check the code and identify the problem.
+3. I also asked AI about features I wanted to implement beyond the code provided by the instructor. Whenever I encountered unfamiliar code or wanted to understand why a certain approach was used, I asked AI for an explanation.

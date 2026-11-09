@@ -24,10 +24,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: auto;
-}
-
 body {
   margin: 0;
   color: var(--color-text);
@@ -281,6 +277,20 @@ header {
   font-size: 12px;
 }
 
+/* Initial Progress */
+.progress-count {
+  display: block;
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  color: inherit;
+}
+
+/* Move only the  0 / 7 of the first page upward */
+#progress-1 {
+  transform: translateY(-13px);
+}
+
 /* Vertical arrow */
   .scroll-arrow {
   position: relative;
@@ -425,31 +435,69 @@ html {
 }
 
 
-/* Arrow on the far right */
+/* Arrow and Progress on the far right */
 .next-section-link {
   position: absolute;
   right: 3.5%;
   bottom: 7%;
-  display: block;
-  width: 1px;
-  height: 72px;
-  background-color: var(--color-primary);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  width: auto;
+  height: auto;
+
   color: var(--color-primary);
   text-decoration: none;
 }
 
+/* Vertical Arrow Line */
 .next-section-arrow {
+  position: relative;
+  display: block;
+
+  width: 1px;
+  height: 64px;
+
+  background-color: var(--color-primary);
+}
+
+/* Arrow Head */
+.next-section-arrow::after {
+  content: "";
   position: absolute;
   bottom: 0;
   left: -4px;
+
   width: 7px;
   height: 7px;
+
   border-right: 1px solid currentColor;
   border-bottom: 1px solid currentColor;
+
   transform: rotate(45deg);
 }
 
-/* FINAL SECTION: Savor the Tea */
+/* Next and Progress Text */
+.next-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.next-label {
+  display: block;
+}
+
+/* FINAL STEP: Savor the Tea */
 
 .brew-ending {
   position: relative;
@@ -475,6 +523,53 @@ html {
   bottom: 10%;
   width: 360px;
   max-width: 40%;
+}
+
+/* Completion Message */
+.ending-message {
+  margin: 0 0 24px;
+
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+
+  color: var(--color-primary);
+}
+
+/* Completion Message and Progress */
+.ending-completion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  text-align: center;
+  transform: translate(110px, 412px);
+}
+
+.ending-completion .ending-message {
+  position: relative;
+  top: 0px; 
+  left: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+.ending-completion .progress-count {
+  position: relative;
+  top: -25px;
+  left: -15px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  max-width: none;
+  text-align: center;
+}
+
+
+/* Keep the completion message hidden until all steps are completed */
+.ending-completion[hidden] {
+  display: none;
 }
 
 /* Vertical Chinese headline */
@@ -556,7 +651,7 @@ html {
   font-family: "Avenir", Arial, sans-serif;
   font-size: 12px;
   line-height: 1.8;
-  transform: translateX(105px)
+  transform: translate(105px, 22px)
 }
 
 /* Responsive Layout: Mobile */

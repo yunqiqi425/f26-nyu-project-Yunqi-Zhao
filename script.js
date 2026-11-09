@@ -98,3 +98,86 @@ renderTeaSteps(1, "step-container-1");
 // Render steps 04–06
 renderTeaSteps(2, "step-container-2");
 
+
+/* Track brewing progress */
+
+// Number of completed brewing steps
+let completedSteps = 0;
+
+// Get the progress elements
+const progress1 = document.getElementById("progress-1");
+const progress2 = document.getElementById("progress-2");
+const progress3 = document.getElementById("progress-3");
+
+// Get the navigation links
+const startBrewing = document.getElementById("start-brewing");
+const nextGroup1 = document.getElementById("next-group-1");
+const nextGroup2 = document.getElementById("next-group-2");
+
+// Get the final completion message
+const endingCompletion = document.getElementById("ending-completion");
+
+// Update the progress displayed on the page
+function updateProgress() {
+  if (progress1) {
+    progress1.textContent = "0 / 7";
+  }
+
+  if (progress2) {
+    progress2.textContent = "3 / 7";
+  }
+
+  if (progress3) {
+    progress3.textContent = "6 / 7";
+  }
+
+  // Check whether all seven steps are completed
+  if (completedSteps === 7) {
+      if (endingCompletion) {
+      endingCompletion.hidden = false;
+     }
+    } else {
+      if (endingCompletion) {
+      endingCompletion.hidden = true;
+     }
+    }
+  }
+
+// Start the brewing process
+if (startBrewing) {
+  startBrewing.addEventListener("click", function () {
+    if (completedSteps === 0) {
+      completedSteps = 3;
+    }
+
+    updateProgress();
+  });
+}
+
+// Move from Steps 01–03 to Steps 04–06
+if (nextGroup1) {
+  nextGroup1.addEventListener("click", function () {
+    if (completedSteps === 3) {
+      completedSteps = 6;
+    }
+
+    updateProgress();
+  });
+}
+
+
+// Move from Steps 04–06 to the final step
+if (nextGroup2) {
+  nextGroup2.addEventListener("click", function () {
+    if (completedSteps === 6) {
+      completedSteps = 7;
+    }
+
+    updateProgress();
+  });
+}
+
+
+// Initialize the page
+updateProgress();
+

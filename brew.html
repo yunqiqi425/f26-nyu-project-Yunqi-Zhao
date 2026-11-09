@@ -60,47 +60,70 @@
         </div>
 
         <!-- Scroll Down Indicator -->
-        <a class="scroll-link" href="#brewing-steps">
-          <span class="scroll-arrow" aria-hidden="true"></span>
-          <span class="scroll-text">Scroll Down to Start</span>
+        <<a class="scroll-link" href="#brew-steps-1" id="start-brewing">
+           <span class="scroll-arrow" aria-hidden="true"></span>
+           <span class="scroll-text">Scroll Down to Start</span>
+           <span class="progress-count" id="progress-1">
+            0 / 7
+          </span>
         </a>
       </section>
       
     <!-- SECOND PAGE: BREWING STEPS 01–03 -->
       <section class="brew-steps-page" id="brew-steps-1">
 
-      <div id="step-container-1" class="brew-step-container">
-      <!-- JavaScript will generate the first three steps here -->
-      </div>
+    <!-- JavaScript will generate steps 01-03 here -->
+      <div id="step-container-1" class="brew-step-container"></div>
 
-    <!-- Scroll to the next group of steps -->
+      <!-- Scroll to the next group of steps -->
       <a class="next-section-link"
        href="#brew-steps-2"
+       id="next-group-1"
        aria-label="Scroll to the next three brewing steps">
       <span class="next-section-arrow" aria-hidden="true"></span>
+      <span class="next-progress">
+      <span class="next-label">Next</span>
+      <span class="progress-count" id="progress-2">3 / 7</span>
+      </span>
+      
       </a>
       </section>
       
     <!-- SECOND PAGE: BREWING STEPS 04–06 -->
       <section class="brew-steps-page" id="brew-steps-2">
-      <div id="step-container-2" class="brew-step-container">
 
     <!-- JavaScript will generate the last three steps here -->
-      </div>
+      <div id="step-container-2" class="brew-step-container"></div>
       
     <!-- Scroll to the next section -->
       <a class="next-section-link"
-      href="#next-section"
-      aria-label="Scroll to the next section">
-      <span class="next-section-arrow" aria-hidden="true"></span>
+        href="#next-section"
+        id="next-group-2"
+        aria-label="Continue to the final brewing step">
+
+        <span class="next-section-arrow" aria-hidden="true"></span>
+        <span class="next-progress">
+        <span class="next-label">Next</span>
+        <span class="progress-count" id="progress-3">6 / 7</span>
+        </span>
       </a>
       </section>
-    
-      <!-- FINAL STEP -->
-      <div class="brew-ending" id="next-section">
+       
+
+      <!-- LAST PAGE: BREWING STEP 07-->
+      <section class="brew-ending" id="next-section">
 
       <!-- Closing Content -->
       <div class="brew-ending-content">
+
+     
+      <!-- Completion Message -->
+      <div class="ending-completion" id="ending-completion" hidden>
+      <h2 class="ending-message" id="ending-message">
+         Enjoy Your Tea!
+      </h2>
+      <p class="progress-count" id="progress-4">7 / 7</p>
+    </div>
 
       <!-- Vertical Chinese Headline -->
       <h2 class="ending-chinese">
@@ -126,8 +149,10 @@
          Build Your Tea Set
       </p>
       </div>
+
       </div>
       </section>
+      
     </main>
     <script src="script.js"></script>
   </body>

@@ -21,13 +21,62 @@
   The function will calculate the progress numbers based on the current state, show or hide the sections that have not been unlocked, and display "Enjoy Your Tea!" when the user reaches the final section.
 
 **What changed:**
-**Patching vs. rendering:** In 2–3 sentences, what was different about your interaction before and after this week?
+1.Removed an extra < character from the HTML.
+2.Moved the CTA button lower on the landing page and adjusted the position of the Chinese headlines.
+3.Updated the CSS and JavaScript to control section visibility. Users now need to click the “Click to Start" or "Next" buttons to unlock the next section instead of simply scrolling down. I also changed the instruction on the first brewing section to "Click to Start" to make the required action clearer and prevent users from skipping the Start button.
+4.Added video backgrounds to the three columns on the landing page and added background videos or images to the following sections.
+5.Combined the previous renderTeaSteps() function and the page update logic into one render() function.
+6.Added a loop inside render() to go through the teaSteps array, with an if statement to check each step and place it in the correct section.
+7.Used completedSteps inside render() to control which sections are visible or hidden.
+8.Updated all progress numbers to be calculated from the current state instead of using fixed values such as 0 / 7, 3 / 7, and 6 / 7.
+9.Changed the Start and Next click handlers so that they only update the state and then call render().
+10.Added an initial call to render() when the page loads.
+
+**Patching vs. rendering:**
+Before this assignment, I used an updateProgress() function to update individual elements on the page directly. For example, it changed the progress text and showed the completion message when the user reached the end. However, the progress was mostly based on fixed values rather than being fully calculated from the current state. The function did not rebuild the brewing step content.
+
+With the new render() function, the page is updated based on the current value of completedSteps. Instead of changing individual elements separately in the click handlers, the handlers now only update the state and call render(). The render function then decides which steps to display, which sections to show or hide, and what progress numbers and completion messages to display.
+
+I found that rendering makes the code more organized because the page updates are handled in one place. It also makes the relationship between the state and what users see easier to understand.
+
 **What was hard, and what I tried:**
+When I added three video backgrounds to the columns on the landing page, I noticed that the video did not appear behind the header at the top. It only became visible after scrolling down a little. At first, I thought the problem was that the header was not transparent or was not layered correctly above the videos. I realized that the actual problem was that the three hero columns on my landing page had previously been moved down by 80px. This caused the video backgrounds to start lower on the page instead of covering the entire area behind the header.
+
+I also wanted to make all the background images and videos darker because their original colors were too saturated. I wanted them to look as if a semi-transparent black layer was placed over them. For images, I could use a gradient overlay in CSS. For videos, it was a little more complicated. I learned that I could use the ::after pseudo-element to create an overlay layer. I also needed to adjust the z-index values to make sure the text stayed above the overlay instead of becoming darker along with the background.
+
+Another challenge was adjusting the positions of different elements in CSS. After adding new backgrounds and making other changes, some of my previous layout adjustments affected the new elements. I had to go back and check the existing CSS to find which styles were causing the layout problems.
+
 **What happened when I tried to break it:**
+When I first changed the page update logic to use render(), my Steps 1–3 and Steps 4–6 pages became blank. I realized that changing the function also meant updating all the related click handlers. The buttons could no longer rely on the old updateProgress() function. They needed to update completedSteps and call render() so that the step content could be generated again.
+
+I originally wanted users to click "Click to Start" to enter Steps 1–3, then click Next to move to Steps 4–6. However, during testing, clicking Next on the Steps 1–3 page did not work as expected. I had to click "Click to Start" again before reaching the next section. I realized that I needed to update the click handlers for all the related CTA buttons, and it was easy to miss one when changing the function.
+
+After fixing the navigation, I noticed that "Enjoy Your Tea!" was no longer showing on the final page. I also encountered another issue where the two brewing sections became blank again. At first, I thought it was caused by the order of the code. After checking more carefully, I found that I had placed the progress update code outside the render() function instead of inside its curly braces. I moved it into render() so that the progress numbers and completion message would also update based on the state.
+
 **What I learned or changed my mind about:**
+I learned that using one render() function to handle page updates makes the code cleaner and easier to manage. Instead of updating many individual elements separately, I can use the state to control what appears on the page.
+
+I also realized how important it is to check all the related buttons and elements when changing a function. If one button or element still uses the old function, part of the page may not work correctly.
+
+Another thing I noticed is that my CSS can become difficult to manage when I keep adding new styles and making small position adjustments. For example, changing the position of one column, headline, or header element can affect other parts of the layout later. Sometimes, adding a new background or section causes previous elements to move or display incorrectly. I want to find a better way to organize my CSS so that future changes do not affect the existing layout as much.
+
 **Question for Joey:**
+Sometimes I have problems organizing my CSS when working on a project with many sections and elements. For example, I may adjust the position of columns, headlines, or elements inside the header. Later, when I add something new or make changes to the JavaScript or CSS, some of the previous layouts suddenly change. This happened when I added the background videos and discovered that my landing page columns had previously been moved down by 80px. I have also had issues with the header font sizes and spacing changing after adding new styles.
+
+Is there a better way to organize CSS and structure styles for different sections so that new changes do not unintentionally affect existing elements? How can I make my code easier to maintain as the project becomes more complex?
+
+Also, I have not received grades for Activity 7: The Structure Audit or Assignment 7: Layout with CSS Grid yet. I wanted to check whether these assignments have been reviewed.
+
 **Next week's goal:**
+1.Reduce the spacing between the Chinese number and title in the headline of the final step in the brewing section.
+2.Work on the mobile version of the website, which I have not had time to adjust yet.
+
 **AI use:**
+1.Used AI to understand and break down the assignment requirements and goals.
+2.Asked questions about possible solutions when I had ideas for fixing certain problems but was unsure whether my approach would work.
+3.Used AI to identify which files I needed to modify for different changes, such as HTML, CSS, or JavaScript.
+4.Used AI to help debug issues and understand why certain elements or sections were not displaying correctly.
+5.Used AI to refine my language
 
 # ONELEAF
 

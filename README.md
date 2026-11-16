@@ -9,10 +9,10 @@
   The page remembers how many brewing steps have been completed using the completedSteps variable. It starts at 0.
 
 - **What changes it:**
-  Clicking "Click to Start" unlocks the brewing section and lead to the second page of the section, which is the first page for brewing steps 1-3. Clicking the first "Next" button unlocks the next page, which is the page for brewing steps 4-6. Clicking the second "Next" button unlocks the final page, which is the page for brewing step 7. Scrolling alone does not change the state or unlock a new section.
+  Clicking "Click to Start" unlocks the brewing section and leads to the second page of the section, which is the first page for brewing steps 1-3. Clicking the first "Next" button unlocks the next page, which is the page for brewing steps 4-6. Clicking the second "Next" button unlocks the final page, which is the page for brewing step 7. Scrolling alone does not change the state or unlock a new section.
 
 - **What render() draws:**
-  The render() function will rebuild the brewing step content using the teaSteps array. It will loop through the six steps It will loop through the six steps and place each step into the correct section. It will also control which sections are visible based on the current state. The seventh step, "Savor the Tea," is currently part of the HTML and will remain in the final section.
+  The render() function will rebuild the brewing step content using the teaSteps array. It will loop through the six steps and place each step into the correct section. It will also control which sections are visible based on the current state. The seventh step, "Savor the Tea," is currently part of the HTML and will remain in the final section.
 
 - **The if inside the loop:**
   For each step, the if statement will check its group and place it in the correct container: the first section for steps 1–3 or the second section for steps 4–6.

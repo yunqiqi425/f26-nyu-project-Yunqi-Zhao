@@ -50,14 +50,26 @@ const teaSteps = [
 ];
 
 
-function renderTeaSteps(group, containerId) {
-  const container = document.getElementById(containerId);
+// Number of completed brewing steps
+let completedSteps = 0;
 
-  if (!container) return;
+function render() {
+  const container1 = document.getElementById("step-container-1");
+  const container2 = document.getElementById("step-container-2");
 
-  teaSteps
-    .filter(step => step.group === group)
-    .forEach(step => {
+  const section1 = document.getElementById("brew-steps-1");
+  const section2 = document.getElementById("brew-steps-2");
+  const finalSection = document.getElementById("next-section");
+
+  // Clear the containers before rebuilding the steps
+  if (container1) container1.innerHTML = "";
+  if (container2) container2.innerHTML = "";
+
+  // Loop through the teaSteps array
+  teaSteps.forEach(step => {
+
+    // Check which section the step belongs to
+    if (step.group === 1 && completedSteps >= 3 && container1) {
       const stepDiv = document.createElement("article");
       const chineseHeading = document.createElement("div");
       const chineseNumber = document.createElement("span");
@@ -67,20 +79,16 @@ function renderTeaSteps(group, containerId) {
 
       stepDiv.className = "brew-step";
 
-      // Chinese number
       chineseNumber.className = "chinese-number";
       chineseNumber.textContent = step.number;
 
-      // Chinese title
       chineseTitle.className = "chinese-title";
       chineseTitle.textContent = step.chineseTitle;
 
-      // Group the Chinese number and title
       chineseHeading.className = "vertical-chinese";
       chineseHeading.appendChild(chineseNumber);
       chineseHeading.appendChild(chineseTitle);
 
-      // English title and description
       englishTitle.textContent = step.title;
       description.textContent = step.description;
 
@@ -88,60 +96,70 @@ function renderTeaSteps(group, containerId) {
       stepDiv.appendChild(englishTitle);
       stepDiv.appendChild(description);
 
-      container.appendChild(stepDiv);
-    });
+      container1.appendChild(stepDiv);
+
+    } else if (step.group === 2 && completedSteps >= 6 && container2) {
+      const stepDiv = document.createElement("article");
+      const chineseHeading = document.createElement("div");
+      const chineseNumber = document.createElement("span");
+      const chineseTitle = document.createElement("span");
+      const englishTitle = document.createElement("h3");
+      const description = document.createElement("p");
+
+      stepDiv.className = "brew-step";
+
+      chineseNumber.className = "chinese-number";
+      chineseNumber.textContent = step.number;
+
+      chineseTitle.className = "chinese-title";
+      chineseTitle.textContent = step.chineseTitle;
+
+      chineseHeading.className = "vertical-chinese";
+      chineseHeading.appendChild(chineseNumber);
+      chineseHeading.appendChild(chineseTitle);
+
+      englishTitle.textContent = step.title;
+      description.textContent = step.description;
+
+      stepDiv.appendChild(chineseHeading);
+      stepDiv.appendChild(englishTitle);
+      stepDiv.appendChild(description);
+
+      container2.appendChild(stepDiv);
+    }
+  });
+
+  // Show or hide sections based on the current state
+  if (section1) section1.hidden = completedSteps < 3;
+  if (section2) section2.hidden = completedSteps < 6;
+  if (finalSection) finalSection.hidden = completedSteps < 7;
+
+  // Update progress numbers
+  const progress1 = document.getElementById("progress-1");
+  const progress2 = document.getElementById("progress-2");
+  const progress3 = document.getElementById("progress-3");
+  const progress4 = document.getElementById("progress-4");
+
+  if (progress1) progress1.textContent = completedSteps + " / 7";
+  if (progress2) progress2.textContent = completedSteps + " / 7";
+  if (progress3) progress3.textContent = completedSteps + " / 7";
+  if (progress4) progress4.textContent = completedSteps + " / 7";
+
+  // Show the completion message
+  const endingCompletion = document.getElementById("ending-completion");
+
+  if (endingCompletion) {
+    endingCompletion.hidden = completedSteps < 7;
+}
 }
 
-// Render steps 01–03
-renderTeaSteps(1, "step-container-1");
 
-// Render steps 04–06
-renderTeaSteps(2, "step-container-2");
-
-
-/* Track brewing progress */
-
-// Number of completed brewing steps
-let completedSteps = 0;
-
-// Get the progress elements
-const progress1 = document.getElementById("progress-1");
-const progress2 = document.getElementById("progress-2");
-const progress3 = document.getElementById("progress-3");
 
 // Get the navigation links
 const startBrewing = document.getElementById("start-brewing");
 const nextGroup1 = document.getElementById("next-group-1");
 const nextGroup2 = document.getElementById("next-group-2");
 
-// Get the final completion message
-const endingCompletion = document.getElementById("ending-completion");
-
-// Update the progress displayed on the page
-function updateProgress() {
-  if (progress1) {
-    progress1.textContent = "0 / 7";
-  }
-
-  if (progress2) {
-    progress2.textContent = "3 / 7";
-  }
-
-  if (progress3) {
-    progress3.textContent = "6 / 7";
-  }
-
-  // Check whether all seven steps are completed
-  if (completedSteps === 7) {
-      if (endingCompletion) {
-      endingCompletion.hidden = false;
-     }
-    } else {
-      if (endingCompletion) {
-      endingCompletion.hidden = true;
-     }
-    }
-  }
 
 // Start the brewing process
 if (startBrewing) {
@@ -149,8 +167,7 @@ if (startBrewing) {
     if (completedSteps === 0) {
       completedSteps = 3;
     }
-
-    updateProgress();
+    render();
   });
 }
 
@@ -160,8 +177,7 @@ if (nextGroup1) {
     if (completedSteps === 3) {
       completedSteps = 6;
     }
-
-    updateProgress();
+    render();
   });
 }
 
@@ -172,12 +188,11 @@ if (nextGroup2) {
     if (completedSteps === 6) {
       completedSteps = 7;
     }
-
-    updateProgress();
+    render();
   });
 }
 
 
 // Initialize the page
-updateProgress();
+render();
 

@@ -514,7 +514,7 @@ html {
   color: var(--color-primary);
 
   background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("images/step-7.jpg");
   background-size: cover;
   background-position: center;
@@ -726,19 +726,19 @@ html {
 /* Brew Step 1-3 Background */
 #step-container-1 .brew-step:nth-child(1) {
   background-image: 
-  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
   url("images/step-1.jpg");
 }
 
 #step-container-1 .brew-step:nth-child(2) {
   background-image: 
-  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
   url("images/step-2.jpg");
 }
 
 #step-container-1 .brew-step:nth-child(3) {
   background-image: 
-  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
   url("images/step-3.jpg");
 }
 
@@ -746,7 +746,7 @@ html {
 /* Brew Step 4-6 Background */
 #step-container-2 .brew-step:nth-child(1) {
   background-image: 
-  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
   url("images/step-4.jpg");
 }
 
@@ -758,6 +758,11 @@ html {
 
 #step-container-2 .brew-step:nth-child(3) {
   background-image: 
-  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
   url("images/step-6.jpg");
+}
+
+.brew-steps-page[hidden],
+.brew-ending[hidden] {
+  display: none !important;
 }

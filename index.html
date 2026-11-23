@@ -25,8 +25,8 @@
         <span>Language</span>
         <span>Account</span>
 
-      <!-- SEARCH BUTTON -->
-      <button type="button" aria-label="Search">
+      <!-- SEARCH TOGGLE BUTTON -->
+      <button type="button" id="search-toggle" aria-label="Search">
         Search
       </button>
 
@@ -45,6 +45,31 @@
 
     </nav>
   </header>
+
+  <!-- Search panel -->
+  <div class="search-panel" id="search-panel" hidden>
+  <form action="brew.html" method="GET" id="search-form">
+
+    <!-- Search input -->
+    <label for="search-input" class="visually-hidden">
+      Search tea culture
+    </label>
+
+    <input
+      type="text"
+      id="search-input"
+      name="search"
+      placeholder="Search"
+      autocomplete="off"
+    >
+    
+    <!-- Close search panel -->
+    <button type="button" id="search-close" aria-label="Close search">
+      x
+    </button>
+
+  </form>
+</div>
 
 
     <main>
@@ -113,5 +138,9 @@
     </div>
     </section>
     </main>
+
+    <!-- Link search interaction script -->
+    <script src="search.js"></script>
+
   </body>
 </html>

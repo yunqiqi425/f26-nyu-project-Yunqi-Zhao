@@ -106,7 +106,7 @@ Also, I have not received grades for Activity 7: The Structure Audit or Assignme
 # ONELEAF
 
 **Latest mockups:** https://www.figma.com/design/HDBo3dj1CC6MB2I2jE6dej/Yunqi-Zhao_LandingPage?node-id=17-126&t=O2XykBvhoLc2gP3s-1
-**Live site:** https://cautious-happiness-vprqg9jj67v7hpgv5-5504.app.github.dev/
+**Live site:** https://cauti ous-happiness-vprqg9jj67v7hpgv5-5504.app.github.dev/
 
 ## Project Log
 

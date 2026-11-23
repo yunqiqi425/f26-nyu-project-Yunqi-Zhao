@@ -15,13 +15,48 @@
   I will write a function that checks whether the search input contains meaningful text and returns true or false. I will use its result in render() to update the search panel based on the current state.
 
 **What changed:**
-**Why redraw on every event:** In 2–3 sentences, why does your handler call `render()` instead of changing the page itself?
+
+1. Added the Search Panel structure to index.html, including IDs for the search toggle, input, and close button.
+2. Styled the search panel with a dark gradient background, an input underline, and a close button.
+3. Created a separate search.js file to handle the search interaction without interfering with the brewing steps in script.js.
+4. Added state variables to track the search text, panel visibility, and invalid input.
+5. Added a hasSearchText() function to check whether the input contains meaningful text.
+6. Added input validation so empty or whitespace-only submissions display an error message instead of navigating.
+7. Updated render() to control the search panel, validation feedback, and visual state.
+
+**Why redraw on every event:**
+Using render() keeps the page updated based on the current state instead of changing different elements directly inside each event handler. When the user opens or closes the panel, types, or submits an invalid input, render() updates the interface to reflect the latest state. This makes the interaction easier to manage because the display is controlled in one place.
+
 **What was hard, and what I tried:**
+I initially added a “Press Enter to Search” message below the input, but it did not look right. The underline became visually interrupted when the message appeared, and I realized the extra message was unnecessary because the input already had a “Search” placeholder. I decided to remove it and use the existing hasSearchText() function to check whether the user entered valid text, then use render() to update the search panel.
+
+I also had to reorganize the HTML because the input, error message, and close button were all direct children of a flex form. This caused them to align horizontally instead of placing the error message below the input. I added a wrapper around the input and error message to create a separate input group and adjusted the CSS.
+
 **What happened when I tried to break it:**
+I noticed that even when I entered random words that were unrelated to tea, the search form still allowed me to navigate to the brewing section. This made me realize that the current search only checks whether the input is empty, not whether the keyword is related to the content on the website.
+
+While testing the error message, I also noticed that the close button (×) moved when the error message appeared. This happened because the layout was affected by the additional message, so I need to make the button position more stable.
+
 **What I learned or changed my mind about:**
+I learned that adding an element to a flex layout can affect the position of other elements, even if I only want to change the text below an input. I also realized that using transform to position an element visually can create unexpected results when the surrounding layout changes. Instead of adjusting positions only with transform, I need to think more about the structure of the layout and how elements relate to each other.
+
+I also learned that a function can do more than return a value. Its result can be used by render() to decide how the interface should respond to the user's input.
+
 **Question for Joey:**
+1.The Search button is currently on my landing page(only works when open index.html in a live server), and submitting a keyword takes the user to the brewing page. Since the same header appears on every page, how can I make the Search function work across all pages? Do I need to add the same search code to every page?
+
+2.How do websites match a search query to related results, even when the user doesn't type the exact keyword? Do they need to manually add every possible keyword, or is there another way to handle this?
+
 **Next week's goal:**
+
+1. Adjust the search bar width and position so it is more balanced and centered. Fix the close button position so it stays in place when the error message appears, and refine the error message placement.
+2. Switch the positions of the hamburger menu and shopping cart in the header.
+3. Continue improving the search interaction and making the header more consistent across pages.
+
 **AI use:**
+1.Used AI to polish the wording in my README and make my notes clearer in English.
+2.Used AI to interpret assignment requirements and explore ways to implement interactions I wanted to create. I asked for step-by-step guidance and explanations of why certain code was needed.
+3.Used AI to clarify class concepts I did not fully understand so I could better understand how the code works and make changes myself.
 
 ### Week 9 — Nov 15
 

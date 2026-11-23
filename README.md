@@ -1,4 +1,29 @@
-### Week 9 — Nov15
+### Week 10 — Nov 22
+
+**Event Plan**
+
+- **User story:**
+  As a visitor, I want to use the search bar to enter a keyword and continue to the tea brewing section, so that I can easily find where to start learning how to brew Chinese tea.
+
+- **The event:**
+  I will use the input event on the search input. It works whenever the user types or deletes text, which makes it suitable for updating the search state in real time.
+
+- **State:**
+  searchText will store the user's current input. It will start as an empty string with close tab and input description.
+
+- **My function:**
+  I will write a function that checks whether the search input contains meaningful text and returns true or false. I will use its result in render() to update the search panel based on the current state.
+
+**What changed:**
+**Why redraw on every event:** In 2–3 sentences, why does your handler call `render()` instead of changing the page itself?
+**What was hard, and what I tried:**
+**What happened when I tried to break it:**
+**What I learned or changed my mind about:**
+**Question for Joey:**
+**Next week's goal:**
+**AI use:**
+
+### Week 9 — Nov 15
 
 **Render Plan**
 

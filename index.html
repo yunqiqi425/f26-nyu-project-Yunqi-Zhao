@@ -50,22 +50,30 @@
   <div class="search-panel" id="search-panel" hidden>
   <form action="brew.html" method="GET" id="search-form">
 
-    <!-- Search input -->
-    <label for="search-input" class="visually-hidden">
-      Search tea culture
-    </label>
+    <!-- Search input group -->
+  <div class="search-field">
 
-    <input
-      type="text"
-      id="search-input"
-      name="search"
-      placeholder="Search"
-      autocomplete="off"
-    >
-    
+  <!-- Search input -->
+  <label for="search-input" class="visually-hidden">
+    Search tea culture
+  </label>
+
+  <input
+    type="text"
+    id="search-input"
+    name="search"
+    placeholder="Search"
+    autocomplete="off"
+  >
+
+  <!-- Search message -->
+  <p id="search-message" hidden>Invalid input. Please try again.</p>
+
+  </div>
+
     <!-- Close search panel -->
     <button type="button" id="search-close" aria-label="Close search">
-      x
+      ×
     </button>
 
   </form>

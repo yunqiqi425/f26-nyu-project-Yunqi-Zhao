@@ -1,3 +1,69 @@
+### Week 11 — Nov 23
+
+- **USER STORY AUDIT** -
+
+**Mian story:**
+As a beginner learning Chinese tea brewing, I want to follow a step-by-step tea brewing guide so that I can confidently prepare tea on my own.
+
+- **Acceptance criteria：** -
+
+**Criterion 1:**
+The guide breaks the brewing process into clear sequential steps.
+Status (✅):
+Notes:This section is clearly devided into 4 pages, which are section landing page, brewing steps 1-3, brewing steps 4-6, and final step page.
+
+**Criterion 2:**
+Each step includes a visual explanation of what the user should do.
+Status (✅):
+Notes:Landing page have cta bottons for clicking to enter each section; brewing section page and two pages of brewing steps(step 1-3, 4-6) have arrow pointing down, instructive description "Next", and step count for user to track progress; The final step page also has arrow for next section and descriptions showing when all progresses are completed.
+
+**Criterion 3:**
+Users can progress from beginner-level brewing to more advanced techniques.
+Status (🟡):
+Notes:The section shows basic brewing steps, but no more advanced techniques but it has search function to direct from landing page.
+
+- **USER TEST NOTES** -
+
+-Maker: Yunqi Zhao
+-Tester: Lindsey Lewis
+
+**Who the user is:**
+The user is a beginner who is interested in learning Chinese tea brewing.
+
+**Task 1 :**
+**Find the section you could learn Chinese tea brewing**
+-Completed? Yes
+-Where they hesitated or got stuck:
+The font style looks different and the height was short on her screen so she did not notice the CTA buttons located near the bottom of the landing page. Also, there is either way of directing to the brewing section by clicking the CTA button or typing keywords in the search panel. She used the first one.
+
+-What they said they expected:
+She expected the CTA button at a more centered location so she can see it without adjusting the screen size.
+
+**Task 2:**
+-Learning Chinese tea brewing till you finish
+-Completed? Yes
+-Where they hesitated or got stuck:
+No
+-What they said they expected:
+She said she did not expect the brewing guide was step-by-step, which is great, when clicking the brewing section. 
+
+**Tester's one-line takeaway:**
+"The one thing I'd fix first is some decriptions for each section on landing page such as step-by-step instructions for tea brewing"
+
+- **PUNCH LIST** -
+
+**MUST SHIP** (aim for 3–5 items; note where each came from: story audit or user test)
+-CTA buttons which allow users to click and enter the section
+-Arrows and instructive descriptions such as "Next" to tell users what to expect and how to get into that state
+-Video and image backgrounds that give users vibes even though they do not understand the language.
+
+**NICE TO HAVE**
+-Step tracking that count and shows how many steps being finished
+-Search function which allow them to type in keywords to direct to the section
+
+**CUT**
+-Criterion 3 is not necessary since it is for beginner, I may do it if I have more time.
+
 ### Week 10 — Nov 22
 
 **Event Plan**

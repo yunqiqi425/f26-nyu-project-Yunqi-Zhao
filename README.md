@@ -45,7 +45,7 @@ She expected the CTA button at a more centered location so she can see it withou
 -Where they hesitated or got stuck:
 No
 -What they said they expected:
-She said she did not expect the brewing guide was step-by-step, which is great, when clicking the brewing section. 
+She said she did not expect the brewing guide was step-by-step, which is great, when clicking the brewing section.
 
 **Tester's one-line takeaway:**
 "The one thing I'd fix first is some decriptions for each section on landing page such as step-by-step instructions for tea brewing"
